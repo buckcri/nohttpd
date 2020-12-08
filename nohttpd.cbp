@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="4" />
+	<Project>
+		<Option title="nohttpd" />
+		<Option pch_mode="0" />
+		<Option compiler="msvctk" />
+		<Build>
+			<Target title="default">
+				<Option output="D:\CODE\SOURCE\CPP\svn\nohttpd2\nohttpd.exe" />
+				<Option working_dir="D:\CODE\SOURCE\CPP\svn\nohttpd2" />
+				<Option type="0" />
+				<Option compiler="msvctk" />
+				<Option includeInTargetAll="1" />
+				<Option projectResourceIncludeDirsRelation="0" />
+			</Target>
+			<Environment>
+				<Variable name="wxwin" value="D:\code\vc-builds\wxWidgets-2.6.3-static-minimal-ansi" />
+			</Environment>
+		</Build>
+		<Compiler>
+			<Add option="/MD" />
+			<Add option="/O2" />
+			<Add option="/W4" />
+			<Add option="/D__WIN95__" />
+			<Add option="/D__WXMSW__" />
+			<Add option="/D_WINDOWS" />
+			<Add option="/DWIN32" />
+			<Add option="/D_WIN32" />
+			<Add directory="$(wxwin)\lib\vc_lib\msw" />
+			<Add directory="$(wxwin)\include" />
+		</Compiler>
+		<Linker>
+			<Add library="$(wxwin)\lib\vc_lib\wxbase26.lib" />
+			<Add library="$(wxwin)\lib\vc_lib\wxmsw26_adv.lib" />
+			<Add library="$(wxwin)\lib\vc_lib\wxmsw26_core.lib" />
+			<Add library="$(wxwin)\lib\vc_lib\wxbase26_net.lib" />
+			<Add library="user32.lib" />
+			<Add library="kernel32.lib" />
+			<Add library="ComCtl32.lib" />
+			<Add library="RpcRT4.lib" />
+			<Add library="WinMM.lib" />
+			<Add library="AdvAPI32.lib" />
+			<Add library="WSock32.lib" />
+			<Add library="Ole32.lib" />
+			<Add library="Shell32.lib" />
+			<Add library="Gdi32.lib" />
+			<Add library="ComDlg32.lib" />
+			<Add library="OleAut32.lib" />
+		</Linker>
+		<Unit filename="AboutDlg.cpp">
+			<Option compilerVar="CPP" />
+			<Option target="default" />
+		</Unit>
+		<Unit filename="AboutDlg.h">
+			<Option compilerVar="" />
+			<Option compile="0" />
+			<Option link="0" />
+			<Option target="default" />
+		</Unit>
+		<Unit filename="Common.cpp">
+			<Option compilerVar="CPP" />
+			<Option target="default" />
+		</Unit>
+		<Unit filename="Common.h">
+			<Option compilerVar="" />
+			<Option compile="0" />
+			<Option link="0" />
+			<Option target="default" />
+		</Unit>
+		<Unit filename="Nohttpd2App.cpp">
+			<Option compilerVar="CPP" />
+			<Option target="default" />
+		</Unit>
+		<Unit filename="Nohttpd2App.h">
+			<Option compilerVar="" />
+			<Option compile="0" />
+			<Option link="0" />
+			<Option target="default" />
+		</Unit>
+		<Unit filename="Nohttpd2Dlg.cpp">
+			<Option compilerVar="CPP" />
+			<Option target="default" />
+		</Unit>
+		<Unit filename="Nohttpd2Dlg.h">
+			<Option compilerVar="" />
+			<Option compile="0" />
+			<Option link="0" />
+			<Option target="default" />
+		</Unit>
+		<Unit filename="OptionsDlg.cpp">
+			<Option compilerVar="CPP" />
+			<Option target="default" />
+		</Unit>
+		<Unit filename="OptionsDlg.h">
+			<Option compilerVar="" />
+			<Option compile="0" />
+			<Option link="0" />
+			<Option target="default" />
+		</Unit>
+		<Unit filename="ReceiverThread.cpp">
+			<Option compilerVar="CPP" />
+			<Option target="default" />
+		</Unit>
+		<Unit filename="ReceiverThread.h">
+			<Option compilerVar="" />
+			<Option compile="0" />
+			<Option link="0" />
+			<Option target="default" />
+		</Unit>
+		<Unit filename="StatisticsDlg.cpp">
+			<Option compilerVar="CPP" />
+			<Option target="default" />
+		</Unit>
+		<Unit filename="StatisticsDlg.h">
+			<Option compilerVar="" />
+			<Option compile="0" />
+			<Option link="0" />
+			<Option target="default" />
+		</Unit>
+		<Unit filename="winicon.rc">
+			<Option compilerVar="WINDRES" />
+			<Option objectName="winicon.res" />
+			<Option target="default" />
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

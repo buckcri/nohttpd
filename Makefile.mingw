@@ -1,0 +1,51 @@
+# Project: nohttpd2
+# Makefile created by Dev-C++ 4.9.9.2-wx-beta-6.8
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = nohttpd2_private.res
+OBJ  = Nohttpd2App.o Nohttpd2Dlg.o Common.o AboutDlg.o ReceiverThread.o OptionsDlg.o StatisticsDlg.o $(RES)
+LINKOBJ  = Nohttpd2App.o Nohttpd2Dlg.o Common.o AboutDlg.o ReceiverThread.o OptionsDlg.o StatisticsDlg.o $(RES)
+LIBS =  -L"D:/programme/Dev-Cpp/lib" -mwindows -lwxmsw26 -lwxmsw26_gl -lwxtiff -lwxjpeg -lwxpng -lwxzlib -lwxregex -lwxexpat -lkernel32 -luser32 -lgdi32 -lcomdlg32 -lwinspool -lwinmm -lshell32 -lcomctl32 -lole32 -loleaut32 -luuid -lrpcrt4 -ladvapi32 -lwsock32 -lodbc32 -lopengl32
+INCS =  -I"D:/programme/Dev-Cpp/include" 
+CXXINCS =  -I"D:/programme/Dev-Cpp/lib/gcc/mingw32/3.4.2/include"  -I"D:/programme/Dev-Cpp/include/c++/3.4.2/backward"  -I"D:/programme/Dev-Cpp/include/c++/3.4.2/mingw32"  -I"D:/programme/Dev-Cpp/include/c++/3.4.2"  -I"D:/programme/Dev-Cpp/include"  -I"D:/programme/Dev-Cpp/include/wx/msw"  -I"D:/programme/Dev-Cpp/include/wx/generic"  -I"D:/programme/Dev-Cpp/include/wx/animate"  -I"D:/programme/Dev-Cpp/include/wx/fl"  -I"D:/programme/Dev-Cpp/include/wx/gizmos"  -I"D:/programme/Dev-Cpp/include/wx/html"  -I"D:/programme/Dev-Cpp/include/wx/mmedia"  -I"D:/programme/Dev-Cpp/include/wx/net"  -I"D:/programme/Dev-Cpp/include/wx/ogl"  -I"D:/programme/Dev-Cpp/include/wx/plot"  -I"D:/programme/Dev-Cpp/include/wx/protocol"  -I"D:/programme/Dev-Cpp/include/wx/stc"  -I"D:/programme/Dev-Cpp/include/wx/svg"  -I"D:/programme/Dev-Cpp/include/wx/xml"  -I"D:/programme/Dev-Cpp/include/wx/xrc"  -I"D:/programme/Dev-Cpp/include/wx" 
+BIN  = nohttpd.exe
+CXXFLAGS = $(CXXINCS)-fno-rtti -fno-exceptions -fstrict-aliasing -Wall -D__WXMSW__ -D__GNUWIN32__ -D__WIN95__   -O2
+CFLAGS = $(INCS)-fno-rtti -fno-exceptions -fstrict-aliasing -Wall -fvtable-thunks -D__WXMSW__ -D__GNUWIN32__ -D__WIN95__   -O2
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before nohttpd.exe all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o "nohttpd.exe" $(LIBS)
+
+Nohttpd2App.o: Nohttpd2App.cpp
+	$(CPP) -c Nohttpd2App.cpp -o Nohttpd2App.o $(CXXFLAGS)
+
+Nohttpd2Dlg.o: Nohttpd2Dlg.cpp
+	$(CPP) -c Nohttpd2Dlg.cpp -o Nohttpd2Dlg.o $(CXXFLAGS)
+
+Common.o: Common.cpp
+	$(CPP) -c Common.cpp -o Common.o $(CXXFLAGS)
+
+AboutDlg.o: AboutDlg.cpp
+	$(CPP) -c AboutDlg.cpp -o AboutDlg.o $(CXXFLAGS)
+
+ReceiverThread.o: ReceiverThread.cpp
+	$(CPP) -c ReceiverThread.cpp -o ReceiverThread.o $(CXXFLAGS)
+
+OptionsDlg.o: OptionsDlg.cpp
+	$(CPP) -c OptionsDlg.cpp -o OptionsDlg.o $(CXXFLAGS)
+
+StatisticsDlg.o: StatisticsDlg.cpp
+	$(CPP) -c StatisticsDlg.cpp -o StatisticsDlg.o $(CXXFLAGS)
+
+nohttpd2_private.res: nohttpd2_private.rc winicon.rc 
+	$(WINDRES) -i nohttpd2_private.rc --input-format=rc -o nohttpd2_private.res -O coff 

@@ -1,0 +1,48 @@
+
+v2.1.0:
+
+- Added: Statistics about the queries to nohttpd:
+         You can see how many times a specific host was blocked and when the last block of this host occured.
+         Furthermore you can watch details about any blocked host; these details consist of the access time, URL,
+         user agent and referrer for one query. The number of queries in the detail view is configurable.
+
+         Note: Enabling this feature costs some RAM and CPU time.
+
+- Added: Query logging may now be done as fully query (i.e. the data as it was received) or as summary (i.e. condensed
+         to the relevant parts).
+         
+         Note: Enabling logging costs some CPU time.
+
+- Added: You may now delete all settings when uninstalling nohttpd under Windows.
+         This means there won't be any traces of nohttpd left after uninstalling, not even registry keys.
+
+- Added: Possibility to view the log messages in an external editor associated with .txt files.
+         Please note that you have to delete the temporary file where the log's contents is saved to yourself.
+         Done by request.
+
+- Fixed: "Close to tray" is disabled/"No tray icon" is enabled if the tray icon wasn't installed successfully.
+         The user would be unable to regain control over nohttpd if it was hidden without a clickable tray icon
+         to show the window again.
+         Note: Those settings are only used for the current session and not saved. On the next start nohttpd will
+         attempt to install a tray icon again.
+
+- Fixed: The nohttpd window is now brought to the front if the icon is double-clicked and the window is already shown, but
+         hidden behind other windows.
+
+- Changed: Log messages now display the date of the log event, too (they displayed just the time before).
+           Done by request.
+           
+- Changed: Redesigned layout:
+           - The main frame is resizable now.
+           - Menu driven layout.
+           - Options are in a seperate window now.
+
+v2.0.1:
+
+- Fixed: Possible crash when "Log queries" was enabled and the query contained "%" characters.
+         This bug is considered critical and updating is strongly recommended.
+         Also removed possible redundant query logging on failed connections.
+         Thanks to Lennart for reporting this bug and testing the fix!
+
+- Fixed: Small fixes to Makefile.vc and nohttpd2_private.rc (needed for compiling with MinGW), though these
+         are only meant as templates for compiling.

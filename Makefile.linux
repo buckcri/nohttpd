@@ -1,0 +1,44 @@
+
+CPP  = g++
+CC   = gcc
+OBJ  = Nohttpd2App.o Nohttpd2Dlg.o Common.o AboutDlg.o ReceiverThread.o OptionsDlg.o StatisticsDlg.o
+LINKOBJ  = Nohttpd2App.o Nohttpd2Dlg.o Common.o AboutDlg.o ReceiverThread.o OptionsDlg.o StatisticsDlg.o
+LIBS =  `wx-config --libs`
+#CXXFLAGS = -Wall `wx-config --cxxflags` -g
+#CFLAGS = -Wall `wx-config --cxxflags` -g
+CXXFLAGS = -Wall `wx-config --cxxflags` -O2
+CFLAGS = -Wall `wx-config --cxxflags` -O2
+RM = rm -f
+BIN  = nohttpd
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before nohttpd all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o "nohttpd" $(LIBS)
+
+Nohttpd2App.o: Nohttpd2App.cpp
+	$(CPP) -c Nohttpd2App.cpp -o Nohttpd2App.o $(CXXFLAGS)
+
+Nohttpd2Dlg.o: Nohttpd2Dlg.cpp
+	$(CPP) -c Nohttpd2Dlg.cpp -o Nohttpd2Dlg.o $(CXXFLAGS)
+
+Common.o: Common.cpp
+	$(CPP) -c Common.cpp -o Common.o $(CXXFLAGS)
+
+AboutDlg.o: AboutDlg.cpp
+	$(CPP) -c AboutDlg.cpp -o AboutDlg.o $(CXXFLAGS)
+
+ReceiverThread.o: ReceiverThread.cpp
+	$(CPP) -c ReceiverThread.cpp -o ReceiverThread.o $(CXXFLAGS)
+
+OptionsDlg.o: OptionsDlg.cpp
+	$(CPP) -c OptionsDlg.cpp -o OptionsDlg.o $(CXXFLAGS)
+
+StatisticsDlg.o: StatisticsDlg.cpp
+	$(CPP) -c StatisticsDlg.cpp -o StatisticsDlg.o $(CXXFLAGS)

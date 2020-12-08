@@ -1,0 +1,6 @@
+// used for compilation with MinGW; see winicon.rc for compilation with Visual C++
+
+AAANOHTTPDMAINICON           ICON                    "res\\nh2.ico"
+
+1 24 "nohttpd.exe.Manifest"
+

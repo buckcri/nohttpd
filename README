@@ -1,0 +1,70 @@
+
+Welcome to nohttpd 2.1.0.
+
+This readme contains brief compile instructions for the supported platforms.
+For licensing issues please view the file LICENSE in the nohttpd directory.
+For further information please see http://www.cdhk.de/buck/nohttpd/.
+
+Contents:
+
+0. General Notes/Contact
+
+1. Compiling on Linux
+
+2. Compiling on Windows
+2a. With Visual C++
+2b. With MinGW
+
+3. Compiling on MacOS X
+
+-------------------------------------------------------------------------------
+
+0. General Notes/Contact
+
+nohttpd binds to port 80, a priviledged port on all OS. Therefore nohttpd must be run with Administrator/root
+privileges. Please see http://www.cdhk.de/buck/nohttpd/ for some discussion on that topic.
+
+If you had problems compiling nohttpd (and perhaps even were able to fix them), found a bug, have a feature
+request/general comment or just want to say thank you, feel free to mail to <c.buck{at)gmx.de> (Note: Replace
+"{at)" with "@").
+
+Compiling on all OS requires wxWidgets (http://www.wxwidgets.org) to be installed.
+Linux users should check for distribution provided packages, Windows users must compile wx themselves.
+You should use at least the 2.6 branch of wx; nohttpd was developed with version 2.6.2 and 2.6.3.
+For further notes please see the nohttpd homepage.
+
+-------------------------------------------------------------------------------
+
+1. Compiling on Linux
+
+In the nohttpd source directory type "make -f Makefile.linux". This produces the binary executable "nohttpd".
+Copy this to a folder in $PATH like "/usr/bin".
+Like already noted, nohttpd requires root privileges to run. It's advised to run nohttpd via sudo.
+nohttpd was developed with the 4.0.x versions of gcc.
+
+-------------------------------------------------------------------------------
+
+2. Compiling on Windows
+
+nohttpd comes with makefile templates for Visual C++ and MinGW. With either you need to edit the makefiles for
+correct include and library paths.
+If you want to use a different compiler just look up the needed includes and libraries in one of the two provied
+makefiles for Windows.
+
+2a. With Visual C++
+
+Type "nmake -f Makefile.vc" in a dos console. This produces the binary executable "nohttpd.exe".
+nohttpd was developed with version 7.1 of Visual C++.
+
+2b. With MinGW
+
+Type "mingw32-make -f Makefile.mingw" in a dos console. This produces the binary executable "nohttpd.exe".
+nohttpd was developed with version 3.4.2 of MinGW.
+
+-------------------------------------------------------------------------------
+
+3. Compiling on MacOS X
+
+You need to have Apple's free Xcode development suite installed to compile nohttpd.
+Type "make -f Makefile.mac" in a terminal. This produces the application package "nohttpd.app" in the source code
+folder.
